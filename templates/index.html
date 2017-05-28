@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="author" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="description" content="Google Clone"/>
+    <meta name="viewport" content="width-1024"/>
+    <title>Is A Student ?</title>
+    <style>
+        /* html5doctor.com Reset v1.6.1 - http://cssreset.com */
+        html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            outline: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent
+        }
+
+        body {
+            line-height: 1
+        }
+
+        article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+            display: block
+        }
+
+        nav ul {
+            list-style: none
+        }
+
+        blockquote, q {
+            quotes: none
+        }
+
+        blockquote:before, blockquote:after, q:before, q:after {
+            content: none
+        }
+
+        a {
+            margin: 0;
+            padding: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            background: transparent
+        }
+
+        ins {
+            background-color: #ff9;
+            color: #000;
+            text-decoration: none
+        }
+
+        mark {
+            background-color: #ff9;
+            color: #000;
+            font-style: italic;
+            font-weight: bold
+        }
+
+        del {
+            text-decoration: line-through
+        }
+
+        abbr[title], dfn[title] {
+            border-bottom: 1px dotted;
+            cursor: help
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+
+        hr {
+            display: block;
+            height: 1px;
+            border: 0;
+            border-top: 1px solid #ccc;
+            margin: 1em 0;
+            padding: 0
+        }
+
+        input, select {
+            vertical-align: middle
+        }
+
+        body {
+            color: #222;
+        }
+
+        .nav {
+            padding-top: 16px;
+            padding-right: 20px;
+        }
+
+        .nav-up {
+            float: right;
+            margin: 0 9px;
+            font-family: arial;
+            color: #404040;
+            font-size: 13px;
+            line-height: 24px;
+        }
+
+        .nav-up button {
+            color: white;
+            background: #2E8AE6;
+            border: none;
+            height: 30px;
+            width: 70px;
+            cursor: pointer;
+        }
+
+        .nav-up img {
+            padding-top: 3px;
+        }
+
+        .main {
+            padding-top: 176px;
+            text-align: center;
+        }
+
+        .main img {
+            height: auto;
+            width: 50%;
+        }
+
+        .main form input {
+            width: 569px;
+            height: 26px;
+            margin-top: 19px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .main form button {
+            color: rgb(68, 68, 68);
+            font-weight: bold;
+            font-size: 10px;
+            background: #2E8AE6;
+            height: 29px;
+            width: 118px;
+            margin: 16px 4px;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            background: rgb(245, 245, 245);
+            cursor: pointer;
+        }
+
+        input {
+            padding-right: 9px;
+            font-size: 16px;
+        }
+
+        form img {
+            position: relative;
+            top: -24px;
+            left: 271px;
+        }
+
+        input img {
+            vertical-align: middle;
+            opacity: 0.6;
+            background: url(data:image/gif;base64,R0lGODlhHAAmAKIHAKqqqsvLy0hISObm5vf394uLiwAAAP///yH5B…EoqQqJKAIBaQOVKHAXr3t7txgBjboSvB8EpLoFZywOAo3LFE5lYs/QW9LT1TRk1V7S2xYJADs=) no-repeat center;
+            background-size: 14px 19px;
+            display: inline-block;
+            height: 23px;
+            width: 17px;
+
+        }
+
+        footer {
+            background: rgb(242, 242, 242);
+            height: 40px;
+            width: 100%;
+            position: fixed;
+            bottom: 0px;
+        }
+
+        .links {
+            margin-left: 15px;
+            margin-right: 15px;
+            font-family: arial;
+            color: #666;
+            font-size: 13px;
+            line-height: 24px;
+
+        }
+
+        .links-left {
+            margin: 8px 15px;
+            float: left
+        }
+
+        .links-right {
+            margin: 8px 15px;
+            float: right
+        }
+
+        body {
+            width: 100%;
+            left: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="nav">
+</div>
+
+<div class="main">
+    <img src="http://ui.edu.ng/sites/all/themes/uiweb_theme/logo.png">
+    <br>
+
+    <form>
+        <input name="matric" placeholder="Matric Number Here" type="number" autocomplete="off"/>
+        <br>
+        <input name="name" type="text" placeholder="Full name Here" autocomplete="off"/>
+        <br>
+        <button onclick="check()">Check</button>
+    </form>
+
+    <div id="response">
+        <p id="name">Name: </p>
+        <p id="matric">Matric: </p>
+        <p id="dept">Dept: </p>
+        <p id="faculty">Faculty: </p>
+        <p id="level">Level: </p>
+
+    </div>
+</div>
+
+
+<footer>
+    <div class="links">
+        <div class="links-left"><a href="http://davidmadethis.com">David Made This</a></div>
+    </div>
+</footer>
+</body>
+
+<script>
+    function check() {
+
+    }
+
+
+</script>
+</html>
