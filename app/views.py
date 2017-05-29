@@ -1,6 +1,8 @@
+from django.http import JsonResponse
 from django.shortcuts import render
 import requests
 from bs4 import BeautifulSoup
+from django.views import View
 
 from django.views.generic import TemplateView
 
@@ -11,15 +13,21 @@ class IndexView(TemplateView):
     template_name = 'index.html'
 
 
-class APIView(TemplateView):
-    def get(self, request, *args, **kwargs):
-        id = request.get.GET('matric') or None
-        pin = request.get.GET('name') or None
+class APIView(View):
+    def get(self, request):
+        id = request.GET.get('matric') or None
+        pin = request.GET.get('name') or None
 
+        keys = pin.split()
+        res = {}
+        for key in keys:
+            res = self.get_result(id, key)
+            if res['is_student']:
+                break
 
-       pass
+        return JsonResponse(data=res, status=200)
 
-    def get_result(id, pin):
+    def get_result(self, id, pin):
         cookies = {
             'PHPSESSID': settings.SESSION_ID,
         }
@@ -50,4 +58,23 @@ class APIView(TemplateView):
 
         soup = BeautifulSoup(html, 'html.parser')
 
-        data_info = soup.find("div", {"id": "stud_info_bx"})
+        data_info = soup.find_all("div", {"class": "cnt_txt"})
+
+        # print(data_info)
+
+        if len(data_info) == 0:
+            data = {"is_student": False}
+        else:
+            data = {
+                "is_student": True,
+                "matric_no": data_info[0].text,
+                "name": data_info[1].text,
+                "faculty": data_info[2].text,
+                "dept": data_info[3].text,
+                # You see what happens is that this info is a year behind
+                "level": int(data_info[4].text) + 100,
+                # "cgpa":data_info[6].text # bitch You guessed IT!!!
+
+            }
+
+        return data

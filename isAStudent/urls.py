@@ -18,6 +18,6 @@ from app import views as appViews
 
 urlpatterns = [
     url(r'^$', view=appViews.IndexView.as_view()),
-    url(r'^api/v1/$', view=appViews.IndexView.as_view()),
+    url(r'^api/v1/$', view=appViews.APIView.as_view()),
 
 ]
