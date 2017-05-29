@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
@@ -26,7 +25,6 @@ SECRET_KEY = '6zbs*slkuaiw^x51$zhar6(qo496^$c-_tr5!^rxeb2q@#21(!'
 DEBUG = False
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -71,10 +69,10 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'isAStudent.wsgi.application'
 
-API_URL = os.environ.get('API_URL')
-SESSION_ID = os.environ.get('SESSION_ID')
-REFFERER = os.environ.get('REFFERER')
-ORIGIN = os.environ.get('ORIGIN')
+API_URL = "http://parents.ui.edu.ng/login.php"
+SESSION_ID = "766efe00c110f84c54a71911eaf8f5a8"
+REFFERER = "http://parents.ui.edu.ng/resultchecker.php"
+ORIGIN = "http://parents.ui.edu.ng"
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
@@ -87,8 +85,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
