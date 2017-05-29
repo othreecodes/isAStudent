@@ -102,6 +102,10 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+API_URL = os.environ.get('API_URL')
+SESSION_ID = os.environ.get('SESSION_ID')
+REFFERER = os.environ.get('REFFERER')
+ORIGIN = os.environ.get('ORIGIN')
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 
@@ -114,6 +118,7 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
 
 
 # Static files (CSS, JavaScript, Images)
