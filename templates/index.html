@@ -7,6 +7,10 @@
     <meta name="description" content="Google Clone"/>
     <meta name="viewport" content="width-1024"/>
     <title>Is A Student ?</title>
+    <meta property="og:title" content="Is A Student ?"/>
+    <meta property="og:description"
+          content="Verifies Studenship of any University of Ibadan Student"/>
+    <meta property="og:image" content="http://ui.edu.ng/sites/all/themes/uiweb_theme/logo.png"/>
     <style>
         /* html5doctor.com Reset v1.6.1 - http://cssreset.com */
         html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
@@ -221,7 +225,7 @@
     <img src="http://ui.edu.ng/sites/all/themes/uiweb_theme/logo.png">
     <br>
 
-    <form action="/api/v1/">
+    <form action="/api/v1/" method="post">
         <input name="matric" placeholder="Matric Number Here" type="number" autocomplete="off"/>
         <br>
         <input name="name" type="text" placeholder="Full name Here" autocomplete="off"/>
@@ -236,7 +240,7 @@
         <li><b>• URL</b></li>
         <li>https://unibadan.herokuapp.com/api/v1/</li>
         <li><b>• METHOD</b></li>
-        <li>GET</li>
+        <li>GET | POST</li>
         <li><b>• PARAMS</b></li>
         <li>Required</li>
         <li>matric=[matric number]</li>

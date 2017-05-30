@@ -18,6 +18,23 @@ class APIView(View):
         id = request.GET.get('matric') or None
         pin = request.GET.get('name') or None
 
+        if id is None or pin is None:
+            return JsonResponse(data={"error": "invalid API Usage"}, status=200)
+        keys = pin.split()
+        res = {}
+        for key in keys:
+            res = self.get_result(id, key)
+            if res['is_student']:
+                break
+
+        return JsonResponse(data=res, status=200)
+
+    def post(self, request):
+        id = request.POST.get('matric') or None
+        pin = request.POST.get('name') or None
+
+        if id is None or pin is None:
+            return JsonResponse(data={"error": "invalid API Usage"}, status=200)
         keys = pin.split()
         res = {}
         for key in keys:
