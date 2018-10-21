@@ -226,9 +226,7 @@
     <br>
 
     <form action="/api/v1/" method="post">
-        <input name="matric" placeholder="Matric Number Here" type="number" autocomplete="off"/>
-        <br>
-        <input name="name" type="text" placeholder="Full name Here" autocomplete="off"/>
+        <input name="matric" placeholder="Matric Number Here" required type="number" autocomplete="off"/>
         <br>
         <button onclick="check()">Check</button>
     </form>
@@ -244,7 +242,6 @@
         <li><b>• PARAMS</b></li>
         <li>Required</li>
         <li>matric=[matric number]</li>
-        <li>name=[Full name]</li>
     </ul>
 
 </div>

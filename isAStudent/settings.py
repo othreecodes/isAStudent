@@ -69,6 +69,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'isAStudent.wsgi.application'
 
 API_URL = "http://parents.ui.edu.ng/login.php"
+NAME_FETCH_URL = "http://streceipt.ui.edu.ng/"
 SESSION_ID = "766efe00c110f84c54a71911eaf8f5a8"
 REFFERER = "http://parents.ui.edu.ng/resultchecker.php"
 ORIGIN = "http://parents.ui.edu.ng"
