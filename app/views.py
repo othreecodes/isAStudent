@@ -19,7 +19,12 @@ class APIView(View):
 
         if id is None:
             return JsonResponse(data={"error": "invalid API Usage"}, status=200)
-        key = self.get_sur_name(id)
+        key = None
+        try:
+            key = self.get_sur_name(id)
+        except:
+            return JsonResponse(data={"is_student": False}, status=200)
+            
         res = self.get_result(id, key)
             
 
@@ -31,7 +36,13 @@ class APIView(View):
 
         if id is None:
             return JsonResponse(data={"error": "invalid API Usage"}, status=200)
-        key = self.get_sur_name(id)
+
+        key = None
+        try:
+            key = self.get_sur_name(id)
+        except:
+            return JsonResponse(data={"is_student": False}, status=200)
+
         res = self.get_result(id, key)
         
 
