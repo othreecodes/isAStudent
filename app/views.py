@@ -85,7 +85,7 @@ class APIView(View):
         # print(data_info)
 
         if len(data_info) == 0:
-            data = {"is_student": False}
+            data = {"is_student": True, "level":100, "matric_no":id, "message":"100 Level and DE students Data would be available soon"}
         else:
             data = {
                 "is_student": True,
